@@ -44,7 +44,7 @@ export function SidebarLink({
       <NavLink
         className={({ isActive }) => `
           flex justify-between gap-2
-          py-1 pr-3 pl-4
+          py-2 pr-3 pl-4
           text-sm
           transition  
           text-zinc-900 dark:text-white

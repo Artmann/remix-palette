@@ -111,7 +111,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               <main className="flex-auto">
                 <article className="flex flex-col h-full pb-10">
-                  <div className="flex-auto prose dark:prose-invert [html_:where(&>*)]:mx-auto [html_:where(&>*)]:max-w-2xl lg:[html_:where(&>*)]:mx-[calc(50%-min(50%,var(--container-lg)))] lg:[html_:where(&>*)]:max-w-3xl">
+                  <div className="flex-auto prose dark:prose-invert [html_:where(&>*)]:mx-auto [html_:where(&>*)]:max-w-2xl lg:[html_:where(&>*)]:mx-[calc(50%-min(50%,var(--container-lg)))] lg:[html_:where(&>*)]:max-w-3xl pb-32  min-h-[80vh]">
                     <BackgroundGradient />
 
                     {children}
@@ -119,7 +119,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </article>
               </main>
 
-              <footer className="mx-auto w-full max-w-2xl space-y-10 pb-16 lg:max-w-5xl"></footer>
+              <footer className="mx-auto w-full max-w-2xl space-y-10 pb-16 lg:max-w-5xl">
+                <div className="text-sm text-gray-500">
+                  Made with ❤️ in Barcelona
+                </div>
+              </footer>
             </div>
           </div>
         </div>
