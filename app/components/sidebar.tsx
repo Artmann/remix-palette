@@ -7,7 +7,7 @@ export function SidebarContent({
   children: ReactNode
 }): ReactElement {
   return (
-    <nav className="hidden lg:block lg:mt-10">
+    <nav className="hidden lg:block lg:pt-14">
       <ul className="flex flex-col gap-6">{children}</ul>
     </nav>
   )
@@ -33,11 +33,13 @@ export function SidebarGroup({
 export function SidebarLink({
   children,
   end,
-  to
+  to,
+  onClick
 }: {
   children: ReactNode
   end?: boolean
   to: string
+  onClick?: () => void
 }): ReactElement {
   return (
     <li className="relative">
@@ -53,6 +55,7 @@ export function SidebarLink({
         `}
         end={end}
         to={to}
+        onClick={onClick}
       >
         <span className="truncate">{children}</span>
       </NavLink>
