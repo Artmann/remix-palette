@@ -6,10 +6,21 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
+    "format": "prettier --write .",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
+  "license": "MIT",
+  "keywords": [
+    "shadcn/ui",
+    "remix",
+    "tailwindcss"
+  ],
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
   "dependencies": {
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",
@@ -42,9 +53,5 @@
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.1"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  }
 }
