@@ -10,13 +10,15 @@ export class RecipeService {
   async listRecipes(): Promise<RecipeDto[]> {
     const slugs = await this.listSlugs()
 
-    const recipes = await Promise.all(slugs.map(slug => {
-      try {
-        return this.loadRecipe(slug)
-      } catch (error: any) {
-        log.error(error)
-      }
-    }))
+    const recipes = await Promise.all(
+      slugs.map((slug) => {
+        try {
+          return this.loadRecipe(slug)
+        } catch (error: any) {
+          log.error(error)
+        }
+      })
+    )
 
     return recipes.filter((recipe): recipe is RecipeDto => Boolean(recipe))
   }
@@ -26,9 +28,9 @@ export class RecipeService {
     const fileNames = await fs.readdir(recipeDirectoryPath)
 
     return fileNames
-      .filter(fileName => fileName.endsWith('.mdx'))
+      .filter((fileName) => fileName.endsWith('.mdx'))
       .sort((a, b) => a.localeCompare(b))
-      .map(fileName => fileName.replace(/\.mdx$/, ''))
+      .map((fileName) => fileName.replace(/\.mdx$/, ''))
   }
 
   async loadRecipe(slug: string): Promise<RecipeDto> {

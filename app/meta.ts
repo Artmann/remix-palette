@@ -12,7 +12,19 @@ interface CreateMetaTagOptions {
   // @username of the website.
   siteTwitterHandle?: string
   // Type of content (e.g. article, website).
-  type?: 'website' | 'article' | 'book' | 'profile' | 'music.song' | 'music.album' | 'music.playlist' | 'music.radio_station' | 'video.movie' | 'video.episode' | 'video.tv_show' | 'video.other'
+  type?:
+    | 'website'
+    | 'article'
+    | 'book'
+    | 'profile'
+    | 'music.song'
+    | 'music.album'
+    | 'music.playlist'
+    | 'music.radio_station'
+    | 'video.movie'
+    | 'video.episode'
+    | 'video.tv_show'
+    | 'video.other'
   // Type of Twitter card to use.
   twitterCard?: 'summary' | 'summary_large_image' | 'app' | 'player'
   // URL of the website.
@@ -20,10 +32,10 @@ interface CreateMetaTagOptions {
 }
 
 /**
- * 
+ *
  * @param title Title of the content (max 70 characters).
- * @param options  
- * @returns 
+ * @param options
+ * @returns
  */
 export function createMetaTags(
   title: string,
@@ -35,10 +47,9 @@ export function createMetaTags(
     siteTwitterHandle,
     type = 'website',
     twitterCard = 'summary_large_image',
-    url,
+    url
   }: CreateMetaTagOptions = {}
 ): MetaDescriptor[] | undefined {
-
   const tags = [
     { title },
     { name: 'title', content: title },
